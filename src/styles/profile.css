@@ -1,0 +1,125 @@
+main,.main-content-area{
+    position: relative;
+}
+
+/* Bio */
+.bio,.bio .container{
+    position: relative;
+}
+.bio .content{
+    line-height: 1.6;
+    font-size: 1.2rem;
+    color: var(--pf-red);
+}
+.bio .profile-img{
+    position: absolute;
+    right: 0;
+}
+
+.profile-info{
+    position: relative;
+    --gray:var(--pf-gray);
+    --before-width:intial;
+     padding-top: 10%;
+    padding-bottom: 5%;
+    
+
+}
+
+.profile-info::before{
+    content: '';
+    position: absolute;
+    width: var(--before-width);
+    height: 100%;
+    background-color: var(--gray);
+    z-index: -1;
+    right: 0;
+    top: 0;
+}
+
+.profile-info-personal .profile-info-personal_name{
+    font-size: 5rem;
+    word-wrap: break-word;
+    margin-bottom: var(--mb-min);
+    text-transform: capitalize;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.profile-info-personal_name .greeting{
+    display: block;
+}
+.profile-info-personal{
+    position: relative;
+}
+.profile-info-personal address{
+    position: absolute;
+    left: 35%;
+    bottom: 55%;
+}
+.profile-info-personal address > *{
+  color: var(--pf-red);
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
+.profile-info .profile-info-social p {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--pf-red);
+} 
+.profile-info-social .social-menu a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.resume .experince ,.resume .education{
+ display: flex;
+ flex-direction: column;
+ align-items: start;
+ margin-bottom: var(--mb-max);
+ /* justify-content: start;  */
+}
+.resume .experince > *:not(span > span) , .resume .education > *{
+    margin-bottom: 15px;
+}
+
+.resume .experince p:first-child {
+    font-weight: 900;
+
+}
+.resume .experince p + span {
+    color: black;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.resume .experince p + span  > span{
+    color: var(--pf-red);
+    font-weight: 400;
+}
+/* This selector for fun we can simplified it like the flolowing : (p:last-child) */
+.resume .experince p:first-child + span:nth-child(2) + p:last-child {
+    color:var(--pf-gray-text);
+    font-weight: 400;
+}
+
+.resume .education span{
+    text-transform: uppercase;
+    color: var(--pf-red);
+}
+
+.resume .education p:first-child{
+    font-weight: 600;
+}
+
+.resume .education p:last-child{
+    color: var(--pf-gray-text);
+    font-weight: 400;
+    /* padding-right: 25%; */
+    
+}
+
+.resume .title{
+    font-size: 2rem;
+    color: var(--pf-red);
+}

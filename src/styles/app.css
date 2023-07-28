@@ -1,0 +1,56 @@
+/* 
+* Time start coding: 7:00PM
+*/
+  
+:root{
+    --pf-gray:#f0f0f0;
+    --pf-red:#cc3931;
+    --pf-gray-text:#a0a0a0;
+    --mb-max:50px;
+    --mb-min:15px;
+    --mb:30px;
+    --container-guter:100px;
+}
+
+
+
+body{
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+
+ul{
+    list-style: none;
+}
+
+ul,h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+    
+}
+img{
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+/* Utility classes */
+
+
+.position-relative{
+    position: relative;
+}
+
+.position-abs{
+    position: absolute;
+}
+
+
+
+#header {
+    background-color: var(--pf-red);
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    
+}
+

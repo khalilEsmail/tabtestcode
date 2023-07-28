@@ -1,0 +1,113 @@
+.responsive{
+    color:green;
+}
+
+@media(max-width:576px) {
+    .container,.row{
+        margin: 0 !important;
+        padding: 0 
+  }
+  article{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+    .social-menu{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+
+    .bio .profile-img , .profile-info-personal address{
+        position: initial;
+    }
+    .profile-info .profile-info-personal address{
+        margin-bottom: 25px;
+
+    }
+
+    .bio .content p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .bio .profile-img {
+        margin-bottom: 30px;
+    }
+     
+    .profile-info-personal , .profile-info-social{
+        flex-direction: column;
+    }
+
+    .profile-info-social{
+        align-items: flex-start;
+    }
+    .profile-info .profile-info-social > p {
+        font-size: 2rem;
+        margin-bottom: 25px;
+
+    }
+    
+
+}
+
+
+
+@media (min-width: 576px) { 
+    .bio .profile-img {
+        position: initial;
+    }
+    .bio .content{
+        font-size: 1rem;
+    }
+    .profile-info-personal address{
+        position: initial;
+    }
+    .profile-info .profile-info-social p {
+     font-size: 2rem;
+    }
+
+    .social-menu {
+        align-items: center;
+    }
+ }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .bio .profile-img {
+        position: absolute;
+    }
+    .bio .content{
+        font-size: 1.2rem;
+    }
+    /* .profile-info-personal address{
+        position: absolute;
+    } */
+    .profile-info .profile-info-social p {
+     font-size: 2.5rem;
+    }
+
+    .social-menu {
+        align-items: center;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    /* ...  */
+
+    .profile-info-personal address{
+        position: absolute;
+    }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+     /* ... */
+    
+    }
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+    /* ...  */
+}
