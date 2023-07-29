@@ -122,4 +122,6 @@ main,.main-content-area{
 .resume .title{
     font-size: 2rem;
     color: var(--pf-red);
+    font-weight: 400;
+    text-transform: uppercase;
 }
