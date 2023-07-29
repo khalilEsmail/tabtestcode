@@ -5,10 +5,6 @@ import data from '../jsTask/data.json';
 import {getUniqeTags , _getUniqeTags as uniqeTagsAsSet} from '../jsTask';
 
 
-function notify(el, message) {
-    if (!el instanceof HTMLElement) return;
-    return el.insertAdjacentHTML('afterbegin', message)
-}
 
 function clouser() {
     // first time content load want to animate 
@@ -56,40 +52,11 @@ function clouser() {
 
     });
 
-
-    function styleBefore(selector) {
-        // if(!selector) return ;
-        let width = 100;
-        let unit = '%'
-
-        // to stop excition when attaching to resize event 
-        if(window.outerWidth < 922) {
-            document.querySelector('.profile-info').style.setProperty('--before-width', `${width}${unit}`) ;
-            return ;    
-        }
-            // dont applay this to smal screen devices 
-            const el = document.querySelector(selector);
-
-            // grap container width
-            const [boundingReact] = el.getClientRects();
-
-            // to set the element height as mockup we need to set its container right and left rect to width so its cover all space nneded in all window from lg & up
-            unit = 'px'
-            width = el.offsetWidth + ((boundingReact.width - el.offsetWidth) + boundingReact.left);
-
-        document.querySelector('.profile-info').style.setProperty('--before-width', `${width}${unit}`)
-
-    }
-
-
-
-
-    styleBefore('.container');
+    styleBefore('.container' , '.profile-info');
 
     window.addEventListener('resize', (e) => {
         styleBefore('.container')
     })
-
 
     notify(
         document.querySelector('#header > h6'),
@@ -97,11 +64,53 @@ function clouser() {
     )
 
 
-    console.log("On compisty => ",getUniqeTags(data))
-    console.log("log(n)compisty => ",uniqeTagsAsSet(data))
+    console.log("On complexity => ",getUniqeTags(data))
+    console.log("log(n)complexity => ",uniqeTagsAsSet(data))
     
 
 
 }
-
 document.addEventListener('DOMContentLoaded', clouser)
+
+//###############################
+
+/**
+ * 
+ * @param {HTMLElement} el 
+ * @param {String} message 
+ * @returns HTML
+ */
+function notify(el, message) {
+    if (!el instanceof HTMLElement) return;
+    return el.insertAdjacentHTML('afterbegin', message)
+}
+
+/**
+ * 
+ * @param {String} selector 
+ * @param {String} target 
+ * @returns viod ;
+ */
+function styleBefore(selector ,target) {
+    // if(!selector) return ;
+    let width = 100;
+    let unit = '%'
+    
+    // to stop excition when attaching to resize event 
+    if(window.outerWidth < 922) {
+        document.querySelector(target).style.setProperty('--before-width', `${width}${unit}`) ;
+        return ;    
+    }
+        // dont applay this to smal screen devices 
+        const el = document.querySelector(selector);
+
+        // grap container width
+        const [boundingReact] = el.getClientRects();
+
+        // to set the element height as mockup we need to set its container right and left rect to width so its cover all space nneded in all window from lg & up
+        unit = 'px'
+        width = el.offsetWidth + ((boundingReact.width - el.offsetWidth) + boundingReact.left);
+
+    document.querySelector(target).style.setProperty('--before-width', `${width}${unit}`)
+
+}
