@@ -1,3 +1,2 @@
-#this is node based function 
-
-run node index.js
+# Filter unique tags for a given structured dataset as in
+## data.json file 
