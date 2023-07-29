@@ -24,7 +24,7 @@ function clouser() {
             -100, 0
             // {value:0}
         ],
-        opacity: [0, 1],
+        opacity: [0, 1], 
         duration: 1000,
         easing: 'easeOutCubic'
 
