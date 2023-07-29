@@ -1,26 +1,4 @@
 
-/**
- * 
- * @param {Array} data 
- * @returns Array
- */
-function getUniqeTags(data) {
-  let $tags = [];
-  // first we loop to get the tags and ad them to new tags array
-  data.forEach((item) => {
-    // we can use tags array var becuase of clouser rouls of javascript and function scopes 
-    $tags = [...$tags, ...item.tags]; // mearg all tags in order to perform filter operation on them for latter use 
-
-  });
-
-  // search for like tags
-  $tags = $tags.filter((tag, index) => {
-    return $tags.indexOf(tag) === index // get dublicates you neeed to remove it 
-  })
-
-  return $tags;
-}
-
 
 /**
  * 
@@ -32,6 +10,21 @@ function extractTagsfrom(entries) {
   entries.forEach(item => tags = [...tags, ...item.tags]);
   return tags;
 }
+
+/**
+ * 
+ * @param {Array} data 
+ * @returns Array
+ */
+function getUniqeTags(data) {
+  let $tags = extractTagsfrom(data)
+  // search for like tags
+  $tags = $tags.filter((tag, index) => $tags.indexOf(tag) === index) ;
+
+  return $tags;
+}
+
+
 /**
  * 
  * @param {Array} dataset 
