@@ -2,11 +2,11 @@ import './index.css';
 import './styles/responsive.css';
 import anime from 'animejs';
 import data from '../jsTask/data.json';
-import getUniqeTags from '../jsTask';
+import {getUniqeTags , _getUniqeTags as uniqeTagsAsSet} from '../jsTask';
 
 
 function notify(el, message) {
-    if(!el instanceof HTMLElement) return ;
+    if (!el instanceof HTMLElement) return;
     return el.insertAdjacentHTML('afterbegin', message)
 }
 
@@ -79,21 +79,24 @@ function clouser() {
     }
 
 
+
+
     styleBefore('.container');
 
     window.addEventListener('resize', (e) => {
         styleBefore('.container')
     })
 
-    
+
     notify(
         document.querySelector('#header > h6'),
         '<b>Check console for js Task</b>'
     )
 
 
-    console.log(getUniqeTags(data))
-
+    console.log("On compisty => ",getUniqeTags(data))
+    console.log("log(n)compisty => ",uniqeTagsAsSet(data))
+    
 
 
 }

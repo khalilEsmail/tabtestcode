@@ -12,7 +12,7 @@
 function getUniqeTags(data) {
     let $tags = [];
     // first we loop to get the tags and ad them to new tags array
-    data.forEach((item, index) => {
+    data.forEach((item) => {
         // we can use tags array var becuase of clouser rouls of javascript and function scopes 
         $tags = [...$tags, ...item.tags]; // mearg all tags in order to perform filter operation on them for latter use 
         
@@ -26,6 +26,28 @@ function getUniqeTags(data) {
   return $tags ;
 }
 
-export default getUniqeTags;
+
+
+function extractTagsfrom(entries) {
+  let tags = [] ; 
+  entries.forEach(item => tags =  [...tags ,...item.tags]);
+  return tags ; 
+}
+
+function _getUniqeTags(dataset){
+  //# caching this On+1 complisty 
+
+  // const tags = extractTagsfrom(dataset) ; 
+  // const $tags = new Set(tags) ; 
+  // return [...$tags]
+
+  // Direct inject Olog(n) complisty
+  return Array.from(new Set(extractTagsfrom(dataset)))
+
+}
+
+
+
+export  {_getUniqeTags,getUniqeTags};
 
 // console.log(getUniqeTags(data))
