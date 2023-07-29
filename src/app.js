@@ -111,6 +111,6 @@ function styleBefore(selector ,target) {
         unit = 'px'
         width = el.offsetWidth + ((boundingReact.width - el.offsetWidth) + boundingReact.left);
 
-    document.querySelector(target).style.setProperty('--before-width', `${width}${unit}`)
+    document.querySelector(target).style.setProperty('--before-width', `${width}${unit}`) 
 
 }
