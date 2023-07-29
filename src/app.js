@@ -61,8 +61,12 @@ function clouser() {
         // if(!selector) return ;
         let width = 100;
         let unit = '%'
-        if (window.outerWidth > 992) {
 
+        // to stop excition when attaching to resize event 
+        if(window.outerWidth < 922) {
+            document.querySelector('.profile-info').style.setProperty('--before-width', `${width}${unit}`) ;
+            return ;    
+        }
             // dont applay this to smal screen devices 
             const el = document.querySelector(selector);
 
@@ -73,7 +77,6 @@ function clouser() {
             unit = 'px'
             width = el.offsetWidth + ((boundingReact.width - el.offsetWidth) + boundingReact.left);
 
-        }
         document.querySelector('.profile-info').style.setProperty('--before-width', `${width}${unit}`)
 
     }
