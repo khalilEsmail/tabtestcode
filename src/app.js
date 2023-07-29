@@ -55,7 +55,7 @@ function clouser() {
     styleBefore('.container' , '.profile-info');
 
     window.addEventListener('resize', (e) => {
-        styleBefore('.container')
+        styleBefore('.container' , '.profile-info')
     })
 
     notify(
