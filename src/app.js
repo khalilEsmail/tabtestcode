@@ -56,7 +56,7 @@ function clouser() {
 
     window.addEventListener('resize', (e) => {
         styleBefore('.container' , '.profile-info')
-    })
+    }) 
 
     notify(
         document.querySelector('#header > h6'),
